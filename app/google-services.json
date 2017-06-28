@@ -1,0 +1,231 @@
+{
+  "project_info": {
+    "project_number": "450286552431",
+    "firebase_url": "https://tracker-67332.firebaseio.com",
+    "project_id": "tracker-67332",
+    "storage_bucket": "tracker-67332.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450286552431:android:6c1dbd57ce007a0e",
+        "android_client_info": {
+          "package_name": "com.infozign.tracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450286552431-bujto0hal7571okreljep1alnkepucbb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.infozign.tracker",
+            "certificate_hash": "6208a00d9e80fa67a4c47d1bf0c8c6d3cd32b5ee"
+          }
+        },
+        {
+          "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATdFMX8TpI8DA_ha7YACysJ2Ku5mm01-M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450286552431:android:590032dfbdfa9f35",
+        "android_client_info": {
+          "package_name": "com.mapswithme.maps.pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450286552431-ou5jnlo35d6kmvf8tpmh0rt780jm23t7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mapswithme.maps.pro",
+            "certificate_hash": "8962e9f9a965cef1f1b376ec5b9d8cc42ec2b191"
+          }
+        },
+        {
+          "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATdFMX8TpI8DA_ha7YACysJ2Ku5mm01-M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450286552431:android:29272705cefb8318",
+        "android_client_info": {
+          "package_name": "com.mapswithme.maps.pro.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450286552431-r5cvkt561a7vbjbthk8c3se4ghq95fmm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mapswithme.maps.pro.debug",
+            "certificate_hash": "8962e9f9a965cef1f1b376ec5b9d8cc42ec2b191"
+          }
+        },
+        {
+          "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATdFMX8TpI8DA_ha7YACysJ2Ku5mm01-M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450286552431:android:82b317bd10e99dab",
+        "android_client_info": {
+          "package_name": "self.postab.trackertab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450286552431-brlma4c66h83c4ls1fqtcrhlokg89e18.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "self.postab.trackertab",
+            "certificate_hash": "7fc2811b8202290f561a7371fe43978d3063dd02"
+          }
+        },
+        {
+          "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATdFMX8TpI8DA_ha7YACysJ2Ku5mm01-M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450286552431:android:d725b516087b1eca",
+        "android_client_info": {
+          "package_name": "offline.mapbox.trackerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450286552431-c9n01adoem3csj4lih2vqrrp79v0ckvv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "offline.mapbox.trackerapp",
+            "certificate_hash": "7fc2811b8202290f561a7371fe43978d3063dd02"
+          }
+        },
+        {
+          "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATdFMX8TpI8DA_ha7YACysJ2Ku5mm01-M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450286552431-vf3vr1ecl8vus600jajjg58a1inkkb4f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

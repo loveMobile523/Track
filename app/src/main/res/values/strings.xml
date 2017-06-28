@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Agir Routes</string>
+
+    <string name="access_token">sk.eyJ1IjoiZGV2aWNlYXBwNTIzIiwiYSI6ImNqMXVrYWludjAwMGUzMm8wMWpjcjhrNTgifQ.vyiJhYoZ2LIAh0_GL6OKjg</string>
+
+    <string name="prompt">Existing</string>
+    <string name="project">Project</string>
+
+
+    <string-array name="spin_status">
+        <item>@string/prompt</item>
+        <item>@string/project</item>
+    </string-array>
+</resources>

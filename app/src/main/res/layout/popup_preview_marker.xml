@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="400dp"
+    android:layout_height="650dp"
+    android:paddingRight="25dp"
+    android:paddingLeft="25dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1.5">
+
+        <ScrollView
+            android:id="@+id/svFields"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/reLayCustomFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spinnerIcon">
+
+                    <TextView
+                        android:id="@+id/tvField1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint=""
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField1"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField2"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField3"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField4"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField5"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField6"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField7"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField8"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField9"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField10"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField11"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField12"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField13"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvField15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvField14"
+                        android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                        android:layout_marginTop="@dimen/custom_field_margin_top_popup"
+                        android:hint="Field name"
+                        android:textColor="#222"
+                        android:textSize="@dimen/custom_field_text_size_popup"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_below="@+id/reLayCustomFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Description of Creator"
+                    android:textSize="@dimen/custom_field_text_size_popup"
+                    android:textColor="#00ADED"/>
+
+                <TextView
+                    android:id="@+id/tvComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDescription"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/shape_curve"
+                    android:gravity="top"
+                    android:text="Comment"
+                    android:maxLines="4"
+                    android:padding="7dp"
+                    android:textSize="@dimen/custom_field_text_size_popup" />
+
+
+                <LinearLayout
+                    android:id="@+id/liLayImage"
+                    android:layout_below="@+id/tvComment"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5">
+
+                    <ImageView
+                        android:id="@+id/imgDownTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp" />
+
+                    <ListView
+                        android:id="@+id/lvImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </ListView>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reLayBtnClose"
+                    android:layout_below="@+id/liLayImage"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3">
+
+                    <Button
+                        android:id="@+id/btnClose"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        android:text="Close"
+                        android:textSize="@dimen/btn_text_size"
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/btn_clicked"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="1.5">
+
+        <ImageView
+            android:id="@+id/imgDownTest"
+            android:layout_width="match_parent"
+            android:layout_height="80dp" />
+
+        <ListView
+            android:id="@+id/lvImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_weight="0.3">
+
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:text="Close"
+            android:textSize="@dimen/btn_text_size"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/btn_clicked"/>
+    </RelativeLayout>-->
+</LinearLayout>

@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="offline.mapbox.trackerapp.MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+    <requestFocus />
+
+    <!-- part 1 -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        android:padding="10dp"
+        android:background="@drawable/shape_line">
+
+        <!-- search view -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:singleLine="true"
+                android:hint="Search Location Here" />
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:src="@drawable/ic_search"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+
+        <!-- category -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="2.5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+                <Spinner
+                    android:id="@+id/spinnerCat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+                <Spinner
+                    android:id="@+id/spinnerSubCat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvMarker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Marker"
+                        android:textColor="#007"
+                        android:textSize="15sp"
+                        android:background="@drawable/shape_curve"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvPolyline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Polyline"
+                        android:textColor="#007"
+                        android:textSize="15sp"
+                        android:background="@drawable/shape_line"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvPolygon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Polygon"
+                        android:textColor="#007"
+                        android:textSize="15sp"
+                        android:background="@drawable/shape_line"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- quick add -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="5">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:text="Quick add"
+                android:textSize="18sp"
+                android:textColor="#222"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_quick_add">
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- button -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="3"
+                android:gravity="center_vertical">
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnPreviewMarkers"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    fancy:fb_radius="25dp"
+                    fancy:fb_defaultColor="#00ADED"
+                    fancy:fb_focusColor="#37D19F"
+                    fancy:fb_text="Preview Markers"
+                    fancy:fb_textSize = "17sp"
+                    fancy:fb_textColor="#fff"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="3"
+                android:gravity="center_vertical">
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    fancy:fb_radius="25dp"
+                    fancy:fb_defaultColor="#00ADED"
+                    fancy:fb_focusColor="#37D19F"
+                    fancy:fb_text="Message"
+                    fancy:fb_textSize = "17sp"
+                    fancy:fb_textColor="#fff"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="3"
+                android:gravity="center_vertical">
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnSync"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    fancy:fb_radius="25dp"
+                    fancy:fb_defaultColor="#00ADED"
+                    fancy:fb_focusColor="#37D19F"
+                    fancy:fb_text="Sync"
+                    fancy:fb_textSize = "17sp"
+                    fancy:fb_textColor="#fff"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- part 2 -->
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.6"
+        android:orientation="horizontal">
+
+        <!-- part 1 of 2 -->
+        <RelativeLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <!-- total fields part 1 of 2 -->
+            <LinearLayout
+                android:id="@+id/liLayFields"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/liLayPreviewMarkers"
+                android:layout_toRightOf="@+id/liLayPreviewMarkers"
+                android:background="@drawable/shape_line"
+                android:orientation="vertical"
+                android:padding="7dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_top_header"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fields"
+                        android:textColor="#fff"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <!-- fields for save 1 of part 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="6.5"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:id="@+id/svFields"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/etName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginTop="@dimen/custom_field_margin_top"
+                                android:hint="Name"
+                                android:textColor="#222"
+                                android:textSize="@dimen/custom_field_text_size_phone" />
+
+
+                            <Spinner
+                                android:id="@+id/spinnerStatus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/etName"
+                                android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginTop="@dimen/custom_field_margin_top"
+                                android:entries="@array/spin_status"
+                                android:spinnerMode="dropdown"
+                                android:textSize="@dimen/custom_field_text_size_phone" />
+
+                            <Spinner
+                                android:id="@+id/spinnerIcon"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/spinnerStatus"
+                                android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginTop="@dimen/custom_field_margin_top"
+                                android:spinnerMode="dropdown"
+                                android:textSize="@dimen/custom_field_text_size_phone" />
+
+                            <RelativeLayout
+                                android:id="@+id/reLayCustomFields"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/spinnerIcon">
+
+                                <EditText
+                                    android:id="@+id/etField1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField1"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField2"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField3"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField4"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField5"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField6"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField7"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField8"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField9"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField10"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField11"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField13"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField12"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField14"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField13"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+
+                                <EditText
+                                    android:id="@+id/etField15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/etField14"
+                                    android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                    android:layout_marginTop="@dimen/custom_field_margin_top"
+                                    android:hint="Field name"
+                                    android:textColor="#222"
+                                    android:textSize="@dimen/custom_field_text_size_phone"
+                                    android:visibility="gone" />
+                            </RelativeLayout>
+
+                            <EditText
+                                android:id="@+id/etComment"
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_below="@+id/reLayCustomFields"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="7dp"
+                                android:background="@drawable/shape_curve"
+                                android:gravity="top"
+                                android:hint="Comment"
+                                android:maxLines="4"
+                                android:padding="7dp"
+                                android:textSize="@dimen/custom_field_text_size_phone" />
+
+                            <EditText
+                                android:id="@+id/etExpence"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/etComment"
+                                android:layout_marginLeft="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginRight="@dimen/custom_field_margin_left_phone"
+                                android:layout_marginTop="@dimen/custom_field_margin_top"
+                                android:hint="Expense"
+                                android:inputType="numberDecimal"
+                                android:textColor="#222"
+                                android:textSize="@dimen/custom_field_text_size_phone" />
+                        </RelativeLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+                <!-- images for uploading 1 of part 2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+
+                    <!-- images capture buttons 1 of part 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/reLayGallery"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="Add from Gallery"
+                                android:textColor="#222"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/ic_gallery" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.2"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal"></LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/reLayCamera"
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:text="Take a Picture"
+                                android:textColor="#222"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/ic_camera" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_weight="2.5"
+                        android:background="@drawable/shape_line"
+                        android:gravity="center_vertical">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal">
+
+                            <mehdi.sakout.fancybuttons.FancyButton
+                                android:id="@+id/btnAdd"
+                                android:layout_width="120dp"
+                                android:layout_height="40dp"
+                                fancy:fb_defaultColor="#00ADED"
+                                fancy:fb_focusColor="#37D19F"
+                                fancy:fb_radius="10dp"
+                                fancy:fb_text="Add"
+                                fancy:fb_textColor="#fff"
+                                fancy:fb_textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- total preview markers part 1 of 2 -->
+            <LinearLayout
+                android:id="@+id/liLayPreviewMarkers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_line"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_top_header">
+
+                    <ImageButton
+                        android:id="@+id/btnBackPreviewMarker"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_left_arrow" />
+
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:text="Preview Markers"
+                        android:textColor="#fff"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <ListView
+                    android:id="@+id/lvPreviewMarkers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"></ListView>
+            </LinearLayout>
+
+            <!-- total message part 1 of 2 -->
+            <RelativeLayout
+                android:id="@+id/reLayMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_line"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/reLayTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_top_header">
+
+                    <ImageButton
+                        android:id="@+id/btnBackMessage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_left_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:text="Message"
+                        android:textColor="#fff"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <ListView
+                    android:id="@+id/lvMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reLayTop"
+                    android:layout_marginBottom="45dp"
+                    android:divider="@null"></ListView>
+
+                <mehdi.sakout.fancybuttons.FancyButton
+                    android:id="@+id/btnNewMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_alignParentBottom="true"
+                    fancy:fb_defaultColor="#00ADED"
+                    fancy:fb_focusColor="#37D19F"
+                    fancy:fb_text="New Message"
+                    fancy:fb_textColor="#fff"
+                    fancy:fb_textSize="17sp">
+
+                </mehdi.sakout.fancybuttons.FancyButton>
+            </RelativeLayout>
+
+            <!-- total new message part 1 of 2 -->
+            <RelativeLayout
+                android:id="@+id/reLayNewMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/shape_line"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/reLayTopNewMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_top_header">
+
+                    <ImageButton
+                        android:id="@+id/btnBackNewMessage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="@android:color/transparent"
+                        android:padding="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_left_arrow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:maxLines="1"
+                        android:text="New Message"
+                        android:textColor="#fff"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <Spinner
+                    android:id="@+id/spUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/reLayTopNewMessage"
+                    android:paddingLeft="15dp">
+
+                </Spinner>
+
+                <LinearLayout
+                    android:id="@+id/liLayBreak"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/spUsername"
+                    android:background="#222"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <ListView
+                    android:id="@+id/lvNewMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/liLayBreak"
+                    android:layout_marginBottom="56dp"
+                    android:divider="@null"></ListView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="3dp">
+
+                        <EditText
+                            android:id="@+id/etNewMessage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/shape_line"
+                            android:gravity="center_vertical"
+                            android:hint="Type Message"
+                            android:paddingLeft="10dp"
+                            android:textColor="#222" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.5"
+                        android:padding="5dp">
+
+                        <mehdi.sakout.fancybuttons.FancyButton
+                            android:id="@+id/btnSend"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            fancy:fb_defaultColor="#00ADED"
+                            fancy:fb_focusColor="#37D19F"
+                            fancy:fb_text="Send"
+                            fancy:fb_textColor="#fff"
+                            fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!-- part 2 of 2 -->
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1.6"
+            android:background="@drawable/shape_line"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- map -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="6">
+
+                <!--<android.support.design.widget.CoordinatorLayout
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </android.support.design.widget.CoordinatorLayout>-->
+
+                <com.mapbox.mapboxsdk.maps.MapView
+                    android:id="@+id/mapView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    mapbox:mapbox_cameraTargetLat="40.7359"
+                    mapbox:mapbox_cameraTargetLng="-74.0151"
+                    mapbox:mapbox_cameraZoom="10"
+                    mapbox:mapbox_cameraZoomMin="10"
+                    mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/bottom_navigation"
+                    style="?android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary"
+                    android:elevation="8dp"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp">
+
+                    <Button
+                        android:id="@+id/download_button"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:drawableTop="@drawable/ic_download"
+                        android:text="Download"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"/>
+
+                    <Button
+                        android:id="@+id/list_button"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:drawableTop="@drawable/ic_list"
+                        android:text="List"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- image uploader -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:layout_weight="3.5"
+                android:background="@drawable/shape_line"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgSelected"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

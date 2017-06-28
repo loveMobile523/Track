@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    custom fields margin    -->
+    <dimen name="custom_field_margin_left">30dp</dimen>
+    <dimen name="custom_field_margin_left_phone">5dp</dimen>
+    <dimen name="custom_field_margin_top">5dp</dimen>
+    <dimen name="custom_field_margin_top_popup">10dp</dimen>
+
+
+    <dimen name="custom_field_text_size">20sp</dimen>
+    <dimen name="custom_field_text_size_popup">24sp</dimen>
+    <dimen name="custom_field_text_size_phone">12sp</dimen>
+
+    <dimen name="btn_text_size">17sp</dimen>
+    <dimen name="btn_text_size_view">12sp</dimen>
+
+    <dimen name="btn_radius">25dp</dimen>
+    <dimen name="btn_radius3">5dp</dimen>
+
+</resources>
